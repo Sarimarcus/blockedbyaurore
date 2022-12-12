@@ -20,6 +20,7 @@
     "@rainbow-me/rainbowkit": "^0.8.0",
     "@thirdweb-dev/react": "^3.6.7",
     "@thirdweb-dev/sdk": "^3.6.7",
+    "@vercel/analytics": "^0.1.6",
     "@wagmi/core": "^0.8.2",
     "classnames": "^2.3.1",
     "ethers": "^5.7.2",

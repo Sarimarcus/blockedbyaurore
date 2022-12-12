@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 import {
@@ -8,8 +9,8 @@ import {
   usePrepareContractWrite,
   useWaitForTransaction,
 } from 'wagmi'
-import { abi } from '../../contract-abi'
 
+import { abi } from '../../contract-abi'
 import FlipCard, { BackCard, FrontCard } from '../flipcard/FlipCard'
 import { Section } from '../layout/Section'
 
