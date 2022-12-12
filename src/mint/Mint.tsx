@@ -23,7 +23,6 @@ const Mint = () => {
   React.useEffect(() => setMounted(true), [])
 
   const { address, isConnected } = useAccount()
-
   const [totalMinted, setTotalMinted] = React.useState(0)
 
   const { config: contractWriteConfig } = usePrepareContractWrite({
