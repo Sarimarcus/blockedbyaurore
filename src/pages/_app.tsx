@@ -1,14 +1,12 @@
-import { AppProps } from 'next/app'
-
-import '../styles/global.css'
-import '@rainbow-me/rainbowkit/styles.css'
-
 import {
   RainbowKitProvider,
   getDefaultWallets,
   connectorsForWallets,
 } from '@rainbow-me/rainbowkit'
 import { argentWallet, trustWallet } from '@rainbow-me/rainbowkit/wallets'
+import { ChainId, ThirdwebSDKProvider } from '@thirdweb-dev/react'
+import { polygon, polygonMumbai } from '@wagmi/core/chains'
+import { AppProps } from 'next/app'
 import {
   createClient,
   configureChains,
@@ -16,9 +14,9 @@ import {
   Chain,
   useSigner,
 } from 'wagmi'
-import { polygon, polygonMumbai } from '@wagmi/core/chains'
 import { publicProvider } from 'wagmi/providers/public'
-import { ChainId, ThirdwebSDKProvider } from '@thirdweb-dev/react'
+import '../styles/global.css'
+import '@rainbow-me/rainbowkit/styles.css'
 
 const rinkeby: Chain = {
   id: 4,
@@ -67,6 +65,7 @@ const connectors = connectorsForWallets([
   },
 ])
 
+/* eslint-disable @typescript-eslint/no-shadow */
 const wagmiClient = createClient({
   autoConnect: true,
   connectors,
