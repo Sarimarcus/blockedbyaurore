@@ -14,7 +14,7 @@ import FlipCard, { BackCard, FrontCard } from '../flipcard/FlipCard'
 import { Section } from '../layout/Section'
 
 const contractConfig = {
-  address: '0xC5B35eCfa2Db1cB2c28507cc0ED94401337F5334',
+  address: process.env.NEXT_PUBLIC_SMARTCONTRACT_ADDRESS,
   abi,
 }
 
@@ -86,14 +86,10 @@ const Mint = () => {
             <ConnectButton showBalance={false} />
 
             {mintError && (
-              <p style={{ marginTop: 24, color: '#FF6257' }}>
-                Error: {mintError.message}
-              </p>
+              <p className="text-lg text-red-600">Error: {mintError.message}</p>
             )}
             {txError && (
-              <p style={{ marginTop: 24, color: '#FF6257' }}>
-                Error: {txError.message}
-              </p>
+              <p className="text-lg text-red-600">Error: {txError.message}</p>
             )}
 
             {mounted && isConnected && !isMinted && (

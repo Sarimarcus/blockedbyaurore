@@ -7,18 +7,15 @@ import { argentWallet, trustWallet } from '@rainbow-me/rainbowkit/wallets'
 import { ChainId, ThirdwebSDKProvider } from '@thirdweb-dev/react'
 import { polygon, polygonMumbai } from '@wagmi/core/chains'
 import { AppProps } from 'next/app'
-import {
-  createClient,
-  configureChains,
-  WagmiConfig,
-  Chain,
-  useSigner,
-} from 'wagmi'
+import { createClient, configureChains, WagmiConfig, useSigner } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'
+import { alchemyProvider } from 'wagmi/providers/alchemy'
+import { infuraProvider } from 'wagmi/providers/infura'
 import '../styles/global.css'
 import '@rainbow-me/rainbowkit/styles.css'
+import { config } from './config'
 
-const rinkeby: Chain = {
+/*const rinkeby: Chain = {
   id: 4,
   name: 'Rinkeby',
   network: 'rinkeby',
@@ -41,11 +38,15 @@ const rinkeby: Chain = {
     blockCreated: 10299530,
   },
   testnet: true,
-}
+}*/
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [polygonMumbai, polygon, rinkeby],
-  [publicProvider()]
+  [polygonMumbai, polygon],
+  [
+    alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_APY_KEY }),
+    infuraProvider({ apiKey: process.env.NEXT_PUBLIC_INFURA_APY_KEY }),
+    publicProvider(),
+  ]
 )
 
 const { wallets } = getDefaultWallets({
