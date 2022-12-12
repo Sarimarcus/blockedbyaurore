@@ -5,6 +5,7 @@ import {
 } from '@rainbow-me/rainbowkit'
 import { argentWallet, trustWallet } from '@rainbow-me/rainbowkit/wallets'
 import { ChainId, ThirdwebSDKProvider } from '@thirdweb-dev/react'
+import { Analytics } from '@vercel/analytics/react'
 import { polygon, polygonMumbai } from '@wagmi/core/chains'
 import { AppProps } from 'next/app'
 import { createClient, configureChains, WagmiConfig, useSigner } from 'wagmi'
@@ -68,6 +69,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
     <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
       <ThirdwebProvider wagmiClient={wagmiClient}>
         <Component {...pageProps} />
+        <Analytics />
       </ThirdwebProvider>
     </RainbowKitProvider>
   </WagmiConfig>

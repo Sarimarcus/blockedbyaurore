@@ -1,7 +1,8 @@
 import React from 'react'
+
 import { motion } from 'framer-motion'
 
-let AnimatedBox = motion.div
+const AnimatedBox = motion.div
 
 // Framer animations
 const duration = 0.3
@@ -47,6 +48,37 @@ export default function FlipCard({ children }: any) {
   )
 }
 
+function AnimatedCardFace({ children, style, ...rest }: any) {
+  return (
+    <AnimatedBox
+      style={{
+        position: 'absolute',
+        backfaceVisibility: 'hidden',
+        height: '100%',
+        overflow: 'hidden',
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        borderRadius: 12,
+        ...style,
+      }}
+      {...rest}
+    >
+      <div
+        style={{
+          position: 'relative',
+          flexDirection: 'column',
+          flex: 1,
+          display: 'flex',
+          alignItems: 'flex-end',
+        }}
+      >
+        <div style={{ flex: 1, width: '100%' }}>{children}</div>
+      </div>
+    </AnimatedBox>
+  )
+}
+
 export function FrontCard({ isCardFlipped, children }: any) {
   return (
     <AnimatedCardFace
@@ -76,36 +108,5 @@ export function BackCard({ isCardFlipped, children }: any) {
     >
       {children}
     </AnimatedCardFace>
-  )
-}
-
-function AnimatedCardFace({ children, style, ...rest }: any) {
-  return (
-    <AnimatedBox
-      style={{
-        position: 'absolute',
-        backfaceVisibility: 'hidden',
-        height: '100%',
-        overflow: 'hidden',
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        borderRadius: 12,
-        ...style,
-      }}
-      {...rest}
-    >
-      <div
-        style={{
-          position: 'relative',
-          flexDirection: 'column',
-          flex: 1,
-          display: 'flex',
-          alignItems: 'flex-end',
-        }}
-      >
-        <div style={{ flex: 1, width: '100%' }}>{children}</div>
-      </div>
-    </AnimatedBox>
   )
 }

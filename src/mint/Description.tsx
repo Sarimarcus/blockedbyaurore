@@ -1,7 +1,10 @@
-import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline'
-import { CurrencyDollarIcon } from '@heroicons/react/24/outline'
-import { CheckBadgeIcon } from '@heroicons/react/24/outline'
-import { TruckIcon } from '@heroicons/react/24/outline'
+import {
+  ClipboardDocumentCheckIcon,
+  CurrencyDollarIcon,
+  CheckBadgeIcon,
+  TruckIcon,
+} from '@heroicons/react/24/outline'
+
 import { Section } from '../layout/Section'
 
 const Description = () => (
@@ -11,8 +14,9 @@ const Description = () => (
         <div className="w-full sm:w-1/2 text-center sm:px-6">
           <h3 className="text-3xl text-gray-900 font-semibold">Rules</h3>
           <div className="mt-6 text-xl leading-9">
-            1 Mint per wallet. We don't actually check if you really have been
-            blocked by @AuroreLalucq, we were lazy to code this. Be fair FFS !
+            1 Mint per wallet. We don&apos;t actually check if you really have
+            been blocked by @AuroreLalucq, we were lazy to code this. Be fair
+            FFS !
           </div>
         </div>
         <div className="w-full sm:w-1/2 p-6 flex justify-center">
@@ -28,9 +32,9 @@ const Description = () => (
         <div className="w-full sm:w-1/2 text-center sm:px-6">
           <h3 className="text-3xl text-gray-900 font-semibold">Free to mint</h3>
           <div className="mt-6 text-xl leading-9">
-            Obvisouly, we won't charge you anything to mint your badge, thus we
-            have enabled 5% royalties on sales. We want to help Amaury recover
-            its $8000 lost from FTX collapse.
+            Obvisouly, we won&apos;t charge you anything to mint your badge,
+            thus we have enabled 5% royalties on sales. We want to help Amaury
+            recover its $8000 lost from FTX collapse.
           </div>
         </div>
       </div>
@@ -41,8 +45,8 @@ const Description = () => (
           <h3 className="text-3xl text-gray-900 font-semibold">Utility</h3>
           <div className="mt-6 text-xl leading-9">
             The only utility is to show the world you have been blocked on
-            Twitter by Aurore Laluck on a NFT. That's all. But who knows, we
-            could implement something later.
+            Twitter by Aurore Laluck on a NFT. That&apos;s all. But who knows,
+            we could implement something later.
           </div>
         </div>
         <div className="w-full sm:w-1/2 p-6 flex justify-center">

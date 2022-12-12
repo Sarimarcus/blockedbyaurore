@@ -13,6 +13,7 @@ const CenteredFooter = (props: ICenteredFooterProps) => (
       <a
         href="https://thirdweb.com/mumbai/0xC5B35eCfa2Db1cB2c28507cc0ED94401337F5334?utm_source=contract_badge"
         target="_blank"
+        rel="noreferrer"
       >
         <img
           width="200"
