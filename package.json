@@ -11,9 +11,12 @@
     "clean": "rimraf .next out",
     "lint": "next lint",
     "build-types": "tsc --noEmit --pretty",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format:check": "prettier --check src",
+    "format:fix": "prettier --write src"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.13",
     "@rainbow-me/rainbowkit": "^0.8.0",
     "@thirdweb-dev/react": "^3.6.7",
     "@thirdweb-dev/sdk": "^3.6.7",

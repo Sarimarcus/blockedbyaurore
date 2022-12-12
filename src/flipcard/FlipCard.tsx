@@ -1,10 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from 'react'
+import { motion } from 'framer-motion'
 
-let AnimatedBox = motion.div;
+let AnimatedBox = motion.div
 
 // Framer animations
-const duration = 0.3;
+const duration = 0.3
 const flipVariants = {
   shown: {
     rotateY: 0,
@@ -24,7 +24,7 @@ const flipVariants = {
       duration,
     },
   },
-};
+}
 
 export default function FlipCard({ children }: any) {
   return (
@@ -44,7 +44,7 @@ export default function FlipCard({ children }: any) {
         {children}
       </AnimatedBox>
     </AnimatedBox>
-  );
+  )
 }
 
 export function FrontCard({ isCardFlipped, children }: any) {
@@ -55,7 +55,7 @@ export function FrontCard({ isCardFlipped, children }: any) {
     >
       {children}
     </AnimatedCardFace>
-  );
+  )
 }
 
 export function BackCard({ isCardFlipped, children }: any) {
@@ -76,7 +76,7 @@ export function BackCard({ isCardFlipped, children }: any) {
     >
       {children}
     </AnimatedCardFace>
-  );
+  )
 }
 
 function AnimatedCardFace({ children, style, ...rest }: any) {
@@ -107,5 +107,5 @@ function AnimatedCardFace({ children, style, ...rest }: any) {
         <div style={{ flex: 1, width: '100%' }}>{children}</div>
       </div>
     </AnimatedBox>
-  );
+  )
 }

@@ -1,18 +1,24 @@
-import { AppProps } from 'next/app';
+import { AppProps } from 'next/app'
 
-import '../styles/global.css';
-import '@rainbow-me/rainbowkit/styles.css';
+import '../styles/global.css'
+import '@rainbow-me/rainbowkit/styles.css'
 
 import {
   RainbowKitProvider,
   getDefaultWallets,
   connectorsForWallets,
-} from '@rainbow-me/rainbowkit';
-import { argentWallet, trustWallet } from '@rainbow-me/rainbowkit/wallets';
-import { createClient, configureChains, WagmiConfig, Chain, useSigner } from 'wagmi';
-import { polygon, polygonMumbai } from '@wagmi/core/chains';
-import { publicProvider } from 'wagmi/providers/public';
-import { ChainId, ThirdwebSDKProvider } from "@thirdweb-dev/react";
+} from '@rainbow-me/rainbowkit'
+import { argentWallet, trustWallet } from '@rainbow-me/rainbowkit/wallets'
+import {
+  createClient,
+  configureChains,
+  WagmiConfig,
+  Chain,
+  useSigner,
+} from 'wagmi'
+import { polygon, polygonMumbai } from '@wagmi/core/chains'
+import { publicProvider } from 'wagmi/providers/public'
+import { ChainId, ThirdwebSDKProvider } from '@thirdweb-dev/react'
 
 const rinkeby: Chain = {
   id: 4,
@@ -37,21 +43,21 @@ const rinkeby: Chain = {
     blockCreated: 10299530,
   },
   testnet: true,
-};
+}
 
 const { chains, provider, webSocketProvider } = configureChains(
   [polygonMumbai, polygon, rinkeby],
   [publicProvider()]
-);
+)
 
 const { wallets } = getDefaultWallets({
   appName: 'RainbowKit Mint NFT Demo',
   chains,
-});
+})
 
 const demoAppInfo = {
   appName: 'RainbowKit Mint NFT Demo',
-};
+}
 
 const connectors = connectorsForWallets([
   ...wallets,
@@ -59,17 +65,17 @@ const connectors = connectorsForWallets([
     groupName: 'Other',
     wallets: [argentWallet({ chains }), trustWallet({ chains })],
   },
-]);
+])
 
 const wagmiClient = createClient({
   autoConnect: true,
   connectors,
   provider,
   webSocketProvider,
-});
+})
 
 function ThirdwebProvider({ wagmiClient, children }: any) {
-  const { data: signer } = useSigner();
+  const { data: signer } = useSigner()
 
   return (
     <ThirdwebSDKProvider
@@ -80,18 +86,17 @@ function ThirdwebProvider({ wagmiClient, children }: any) {
     >
       {children}
     </ThirdwebSDKProvider>
-  );
+  )
 }
-
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <WagmiConfig client={wagmiClient}>
-  <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
+    <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
       <ThirdwebProvider wagmiClient={wagmiClient}>
         <Component {...pageProps} />
       </ThirdwebProvider>
-  </RainbowKitProvider>
+    </RainbowKitProvider>
   </WagmiConfig>
-);
+)
 
-export default MyApp;
+export default MyApp

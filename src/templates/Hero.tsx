@@ -1,11 +1,6 @@
-import Link from 'next/link';
-
-import { Background } from '../background/Background';
-import { Button } from '../button/Button';
-import { HeroOneButton } from '../hero/HeroOneButton';
-import { Section } from '../layout/Section';
-import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
-import { Logo } from './Logo';
+import { Background } from '../background/Background'
+import { HeroOneButton } from '../hero/HeroOneButton'
+import { Section } from '../layout/Section'
 
 const Hero = () => (
   <Background color="bg-gray-100">
@@ -17,10 +12,10 @@ const Hero = () => (
             <span className="text-primary-500">Aurore Lalucq?</span>
           </>
         }
-        description="Claim your NFT to commemorate this achievment!"
+        description="Claim your NFT to commemorate this achievment and join the exclusive club of people blocked by Aurore Lalucq on Twitter"
       />
     </Section>
   </Background>
-);
+)
 
-export { Hero };
+export { Hero }

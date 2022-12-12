@@ -1,5 +1,5 @@
-import { VerticalFeatureRow } from '../feature/VerticalFeatureRow';
-import { Section } from '../layout/Section';
+import { VerticalFeatureRow } from '../feature/VerticalFeatureRow'
+import { Section } from '../layout/Section'
 
 const VerticalFeatures = () => (
   <Section
@@ -26,6 +26,6 @@ const VerticalFeatures = () => (
       imageAlt="Third feature alt text"
     />
   </Section>
-);
+)
 
-export { VerticalFeatures };
+export { VerticalFeatures }
