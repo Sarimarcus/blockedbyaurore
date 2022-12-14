@@ -12,7 +12,7 @@ const Hero = () => (
             <span className="text-primary-500">Aurore Lalucq?</span>
           </>
         }
-        description="Claim your NFT to commemorate this achievment and join the exclusive club of people blocked by Aurore Lalucq on Twitter"
+        description="Claim your NFT to commemorate this achievement and join the exclusive club of people blocked by Aurore Lalucq on Twitter"
       />
     </Section>
   </Background>

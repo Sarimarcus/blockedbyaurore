@@ -11,6 +11,9 @@ const Description = () => (
   <>
     <Section>
       <div className="mt-20 flex flex-wrap items-center">
+        <div className="w-full sm:w-1/2 p-6 flex justify-center">
+          <ClipboardDocumentCheckIcon className="h-24 w-24 text-blue-500" />
+        </div>
         <div className="w-full sm:w-1/2 text-center sm:px-6">
           <h3 className="text-3xl text-gray-900 font-semibold">Rules</h3>
           <div className="mt-6 text-xl leading-9">
@@ -19,13 +22,10 @@ const Description = () => (
             FFS !
           </div>
         </div>
-        <div className="w-full sm:w-1/2 p-6 flex justify-center">
-          <ClipboardDocumentCheckIcon className="h-24 w-24 text-blue-500" />
-        </div>
       </div>
     </Section>
     <Section>
-      <div className="mt-20 flex flex-wrap items-center">
+      <div className="mt-20 flex flex-wrap items-center flex-row-reverse">
         <div className="w-full sm:w-1/2 p-6 flex justify-center">
           <CurrencyDollarIcon className="h-24 w-24 text-blue-500" />
         </div>
@@ -41,6 +41,9 @@ const Description = () => (
     </Section>
     <Section>
       <div className="mt-20 flex flex-wrap items-center">
+        <div className="w-full sm:w-1/2 p-6 flex justify-center">
+          <CheckBadgeIcon className="h-24 w-24 text-blue-500" />
+        </div>
         <div className="w-full sm:w-1/2 text-center sm:px-6">
           <h3 className="text-3xl text-gray-900 font-semibold">Utility</h3>
           <div className="mt-6 text-xl leading-9">
@@ -49,13 +52,10 @@ const Description = () => (
             we could implement something later.
           </div>
         </div>
-        <div className="w-full sm:w-1/2 p-6 flex justify-center">
-          <CheckBadgeIcon className="h-24 w-24 text-blue-500" />
-        </div>
       </div>
     </Section>
     <Section>
-      <div className="mt-20 flex flex-wrap items-center">
+      <div className="mt-20 flex flex-wrap items-center flex-row-reverse">
         <div className="w-full sm:w-1/2 p-6 flex justify-center">
           <TruckIcon className="h-24 w-24 text-blue-500" />
         </div>

@@ -77,7 +77,7 @@ const Mint = () => {
 
   return (
     <>
-      <Section title="It's free">
+      <Section title="It's free, only 1000 supply">
         <h3 className="text-3xl text-gray-900 font-semibold text-center">
           {totalMinted} minted so far!
         </h3>
