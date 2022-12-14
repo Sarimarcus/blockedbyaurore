@@ -14,6 +14,10 @@ module.exports = {
       '6xl': '4rem',
     },
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
+      },
       colors: {
         primary: {
           100: '#E6F6FE',
@@ -44,4 +48,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}

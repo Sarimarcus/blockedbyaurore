@@ -78,12 +78,12 @@ const Mint = () => {
   return (
     <>
       <Section title="It's free, only 1000 supply">
-        <h3 className="text-3xl text-gray-900 font-semibold text-center">
+        <h3 className="text-3xl text-gray-900 font-semibold text-center m-8">
           {totalMinted} minted so far!
         </h3>
-        <div className="mt-20 flex flex-wrap">
-          <div className="w-full sm:w-1/2 sm:px-6">
-            <ConnectButton showBalance={false} />
+        <div className="mt-20 flex flex-wrap justify-center">
+          <div className="m-8">
+            <ConnectButton />
 
             {mintError && (
               <p className="text-lg text-red-600">Error: {mintError.message}</p>
@@ -92,22 +92,24 @@ const Mint = () => {
               <p className="text-lg text-red-600">Error: {txError.message}</p>
             )}
 
-            {mounted && isConnected && !isMinted && (
-              <button
-                disabled={!mint || isMintLoading || isMintStarted}
-                className="text-blue-500 border border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase px-8 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 my-8 cursor-pointer"
-                data-mint-loading={isMintLoading}
-                data-mint-started={isMintStarted}
-                onClick={() => mint?.()}
-              >
-                {isMintLoading && 'Waiting for approval'}
-                {isMintStarted && 'Minting...'}
-                {!isMintLoading && !isMintStarted && 'Mint'}
-              </button>
-            )}
+            <div className="my-8 text-center">
+              {mounted && isConnected && !isMinted && (
+                <button
+                  disabled={!mint || isMintLoading || isMintStarted}
+                  className="jsx-2452873545 btn btn-base btn-primary cursor-pointer"
+                  data-mint-loading={isMintLoading}
+                  data-mint-started={isMintStarted}
+                  onClick={() => mint?.()}
+                >
+                  {isMintLoading && 'Waiting for approval'}
+                  {isMintStarted && 'Minting...'}
+                  {!isMintLoading && !isMintStarted && 'Mint'}
+                </button>
+              )}
+            </div>
           </div>
 
-          <div className="w-full sm:w-1/2">
+          <div className="m-8">
             <FlipCard>
               <FrontCard isCardFlipped={isMinted}>
                 <img
@@ -116,6 +118,8 @@ const Mint = () => {
                   height="500"
                   alt="RainbowKit Demo NFT"
                 />
+                <h1 style={{ marginTop: 24 }}>Rainbow NFT</h1>
+                <ConnectButton />
               </FrontCard>
               <BackCard isCardFlipped={isMinted}>
                 <div style={{ padding: 24 }}>

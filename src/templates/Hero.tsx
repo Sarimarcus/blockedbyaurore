@@ -9,7 +9,9 @@ const Hero = () => (
         title={
           <>
             {'You have been blocked on Twitter by \n'}
-            <span className="text-primary-500">Aurore Lalucq?</span>
+            <span className="text-primary-500 font-playfair italic">
+              Aurore Lalucq
+            </span>
           </>
         }
         description="Claim your NFT to commemorate this achievement and join the exclusive club of people blocked by Aurore Lalucq on Twitter"
