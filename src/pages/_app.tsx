@@ -11,16 +11,22 @@ import { AppProps } from 'next/app'
 import { createClient, configureChains, WagmiConfig, useSigner } from 'wagmi'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { infuraProvider } from 'wagmi/providers/infura'
-import { publicProvider } from 'wagmi/providers/public'
+import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
+
 import '../styles/global.css'
 import '@rainbow-me/rainbowkit/styles.css'
 
 const { chains, provider, webSocketProvider } = configureChains(
   [polygonMumbai, polygon],
   [
+    jsonRpcProvider({
+      rpc: (chain) => ({
+        http: process.env.NEXT_PUBLIC_CUSTOM_RPC_HTTP,
+        webSocket: process.env.NEXT_PUBLIC_CUSTOM_RPC_WSS,
+      }),
+    }),
     alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_APY_KEY }),
     infuraProvider({ apiKey: process.env.NEXT_PUBLIC_INFURA_APY_KEY }),
-    publicProvider(),
   ]
 )
 

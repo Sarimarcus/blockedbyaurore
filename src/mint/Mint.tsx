@@ -112,12 +112,7 @@ const Mint = () => {
           <div className="m-8">
             <FlipCard>
               <FrontCard isCardFlipped={isMinted}>
-                <img
-                  src="/nft.png"
-                  width="500"
-                  height="500"
-                  alt="RainbowKit Demo NFT"
-                />
+                <img src="/nft.png" width="500" height="500" alt="NFT" />
                 <h1 style={{ marginTop: 24 }}>Rainbow NFT</h1>
                 <ConnectButton />
               </FrontCard>
@@ -127,25 +122,31 @@ const Mint = () => {
                     src="/nft.png"
                     width="80"
                     height="80"
-                    alt="RainbowKit Demo NFT"
+                    alt="NFT"
                     style={{ borderRadius: 8 }}
                   />
-                  <h2 style={{ marginTop: 24, marginBottom: 6 }}>
-                    NFT Minted!
-                  </h2>
+                  <h2 className="text-2xl font-bold py-3">NFT Minted!</h2>
                   <p style={{ marginBottom: 24 }}>
                     Your NFT will show up in your wallet in the next few
                     minutes.
                   </p>
                   <p style={{ marginBottom: 6 }}>
                     View on{' '}
-                    <a href={`https://polygonscan.com/tx/${mintData?.hash}`}>
+                    <a
+                      href={`https://polygonscan.com/tx/${mintData?.hash}`}
+                      className="underline"
+                    >
                       Etherscan
                     </a>
                   </p>
                   <p>
                     View on{' '}
-                    <a href={`https://opensea.io/${txData?.to}/1`}>Opensea</a>
+                    <a
+                      href={`https://opensea.io/${txData?.to}/1`}
+                      className="underline"
+                    >
+                      Opensea
+                    </a>
                   </p>
                 </div>
               </BackCard>

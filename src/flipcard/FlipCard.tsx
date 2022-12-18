@@ -99,8 +99,8 @@ export function BackCard({ isCardFlipped, children }: any) {
       style={
         isCardFlipped
           ? {
-              backgroundColor: '#7A70FF',
-              backgroundImage: 'linear-gradient(-370deg, #3898FF, #7A70FF)',
+              backgroundColor: '#00acee',
+              backgroundImage: 'linear-gradient(-370deg, #00acee, #00acee)',
               color: 'white',
             }
           : {}
