@@ -20,7 +20,7 @@ const { chains, provider, webSocketProvider } = configureChains(
   [polygonMumbai, polygon],
   [
     jsonRpcProvider({
-      rpc: (chain) => ({
+      rpc: () => ({
         http: process.env.NEXT_PUBLIC_CUSTOM_RPC_HTTP,
         webSocket: process.env.NEXT_PUBLIC_CUSTOM_RPC_WSS,
       }),
