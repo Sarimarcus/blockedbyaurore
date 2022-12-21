@@ -78,9 +78,11 @@ const Mint = () => {
   return (
     <>
       <Section title="It's free, only 1000 supply">
-        <h3 className="text-3xl text-gray-900 font-semibold text-center m-8">
-          {totalMinted} minted so far!
-        </h3>
+        {mounted && isConnected && (
+          <h3 className="text-3xl text-gray-900 font-semibold text-center m-8">
+            {totalMinted} minted so far!
+          </h3>
+        )}
         <div className="mt-20 flex flex-wrap justify-center">
           <div className="m-8">
             <ConnectButton />
