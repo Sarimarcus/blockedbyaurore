@@ -1,4 +1,7 @@
+import Link from 'next/link'
+
 import { Background } from '../background/Background'
+import { Button } from '../button/Button'
 import { HeroOneButton } from '../hero/HeroOneButton'
 import { Section } from '../layout/Section'
 
@@ -15,6 +18,13 @@ const Hero = () => (
           </>
         }
         description="Claim your NFT to commemorate this achievement and join the exclusive club of people blocked by Aurore Lalucq on Twitter"
+        button={
+          <Link href="https://opensea.io/collection/blocked-by-aurore">
+            <a>
+              <Button xl>See the collection on OpenSea</Button>
+            </a>
+          </Link>
+        }
       />
     </Section>
   </Background>
